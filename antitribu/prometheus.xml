@@ -1,21 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <Beta>False</Beta>
-  <Category>Productivity: Tools:</Category>
+<?xml version="1.0"?>
+<Container version="2">
   <Name>Prometheus</Name>
-  <Description>
-	Prometheus
-  </Description>
-  <Overview>
-	Prometheus is a time series metrics thing...
-  </Overview>
-  <Support></Support>
-  <Registry>https://registry.hub.docker.com/r/prom/prometheus/</Registry>
   <Repository>prom/prometheus</Repository>
-  <BindTime>true</BindTime>
+  <Registry>https://registry.hub.docker.com/r/prom/prometheus/</Registry>
+  <Network>host</Network>
+  <MyIP/>
   <Privileged>true</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>&#xD;
+        Prometheus&#xD;
+  </Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:9090]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Antitribu/unraid-templates/master/antitribu/icons/Prometheus.png</Icon>
+  <ExtraParams/>
+  <PostArgs>--storage.tsdb.retention 1825d --config.file /config/prometheus.yml --storage.tsdb.path /prometheus</PostArgs>
+  <DateInstalled>1547416369</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <DonateImg/>
+  <MinVer/>
+  <Description>&#xD;
+        Prometheus&#xD;
+  </Description>
   <Networking>
-    <Mode>bridge</Mode>
+    <Mode>host</Mode>
     <Publish>
       <Port>
         <HostPort>9090</HostPort>
@@ -24,24 +35,20 @@
       </Port>
     </Publish>
   </Networking>
-  <Environment>
-    <Variable>
-      <Name></Name>
-      <Value></Value>
-    </Variable>
-  </Environment>    
   <Data>
     <Volume>
-      <HostDir>path to config</HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <HostDir>/mnt/user/appdata/Prometheus/prometheus.yml</HostDir>
+      <ContainerDir>/etc/prometheus/prometheus.yml</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>path to data</HostDir>
-      <ContainerDir>/data</ContainerDir>
+      <HostDir>/mnt/user/prometheus-data/</HostDir>
+      <ContainerDir>/prometheus</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:9090]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/Antitribu/unraid-templates/master/antitribu/icons/Prometheus.png</Icon>
-</Containers>
+  <Environment/>
+  <Config Name="Host Port 1" Target="9090" Default="9090" Mode="tcp" Description="Container Port: 9090" Type="Port" Display="always" Required="true" Mask="false">9090</Config>
+  <Config Name="Prometheus YML" Target="/etc/prometheus/prometheus.yml" Default="" Mode="rw" Description="Container Path: /etc/prometheus/prometheus.yml" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Prometheus/prometheus.yml</Config>
+  <Config Name="Data Path" Target="/prometheus" Default="" Mode="rw" Description="Container Path: /prometheus" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/prometheus-data/</Config>
+</Container>
