@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Prometheus</Name>
+  <Name>Prometheus2</Name>
   <Repository>prom/prometheus</Repository>
   <Registry>https://registry.hub.docker.com/r/prom/prometheus/</Registry>
   <Network>host</Network>
