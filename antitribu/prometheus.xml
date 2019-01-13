@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
-<Beta>False</Beta>
-<Category>Productivity: Tools:</Category>
+  <Beta>False</Beta>
+  <Category>Productivity: Tools:</Category>
   <Name>Prometheus</Name>
   <Description>
 	Prometheus
-  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
-  [b]/config[/b] This is where the Prometheus applications will store its yml file.
   </Description>
   <Overview>
 	Prometheus is a time series metrics thing...
@@ -44,6 +42,6 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:5601]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/codechimp-org/unraid-docker-templates/master/codechimp/images/elastic-icon.png</Icon>
+  <WebUI>http://[IP]:[PORT:9090]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/Antitribu/unraid-templates/master/antitribu/icons/Prometheus.png</Icon>
 </Containers>
