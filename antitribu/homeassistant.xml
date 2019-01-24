@@ -43,6 +43,5 @@
   </Data>
   <Environment/>
   <Config Name="Host Port 1" Target="8123" Default="8123" Mode="tcp" Description="Container Port: 8123" Type="Port" Display="always" Required="true" Mask="false">8123</Config>
-  <Config Name="Config" Target="/mnt/user/appdata/homeassistant" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/homeassistant</Config>
-  
+  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/homeassistant</Config>
 </Container>
