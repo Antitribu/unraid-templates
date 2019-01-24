@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>homeassistant</Name>
+  <Repository>homeassistant/home-assistant</Repository>
+  <Registry>https://hub.docker.com/r/homeassistant/home-assistant/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>&#xD;
+        Home Assistant&#xD;
+  </Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8123]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/home-assistant/home-assistant-assets/master/logo-pretty.png</Icon>
+  <ExtraParams/>
+  <DateInstalled>1547416369</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <DonateImg/>
+  <MinVer/>
+  <Description>&#xD;
+        Home Assistant&#xD;
+  </Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8123</HostPort>
+        <ContainerPort>8123</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/homeassistant</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="Host Port 1" Target="8123" Default="8123" Mode="tcp" Description="Container Port: 8123" Type="Port" Display="always" Required="true" Mask="false">8123</Config>
+  <Config Name="Config" Target="/mnt/user/appdata/homeassistant" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/homeassistant</Config>
+  
+</Container>
